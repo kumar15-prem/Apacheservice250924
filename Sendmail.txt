@@ -1,0 +1,28 @@
+#yum install -y sendmail*
+#yum install -y mail*
+#vi /etc/mail/sendmail.mc
+go to the line starts with DAEMON_OPTIONS ('Port=smtp,Addr=127.0.0.1, Name=MTA')dnl
+change it as per below:-
+dnl DAEMON_OPTIONS ('Port=smtp,Addr=127.0.0.1, Name=MTA')dnl
+save and exit with :wq enter
+#vi /etc/mail/local-host-names
+besant.com
+server10.besant.com
+save and exit
+#hostname
+#create a user
+#systemctl start sendmail
+#systemctl enable sendmail
+#vi /etc/hosts
+127.0.0.1	server10	server10.besant.com
+save and exit
+#mail -v -s "Test Mail" ram@server10.besant.com
+Hi
+welcome to Besant.
+ctrl + d to save and exit
+
+
+Now login with user
+$mail
+give mail sequence number 1
+press enter and you will get your email.
